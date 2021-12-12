@@ -1,0 +1,283 @@
+﻿@page "/room"
+@page "/room/{id}"
+@using ChartJs.Blazor.Common
+@using ChartJs.Blazor.PieChart
+@using ChartJs.Blazor.Util
+@using ScrumEstimationWeb.Shared
+@using Microsoft.AspNetCore.SignalR.Client
+@using System.Text
+@using System.Drawing
+@inject HttpClient Http
+
+@inject IJSRuntime JSRuntime
+@inject NavigationManager NavManager
+@implements IAsyncDisposable
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
+
+<h1>Room: @RoomName</h1>
+<div>Hello <span style="text-transform: capitalize;" id="currentUsername">@UserName</span></div>
+<div>Ticket: <span>@CurrentItem</span></div>
+@if (isOwner && isDisplayEstimate)
+{
+    <div>
+        <button class="btn btn-primary" @onclick="@Estimated">Estimated</button>
+    </div>
+}
+<input id="isOwner" type="hidden" @bind="@isOwner" />
+<input id="chartData" type="hidden" @bind="@EstimationData" />
+<div class="row">
+    <div id="estimate" class="col  col-md-8">
+        <div style="width:100%;display:@isShowCard;">
+            @foreach (var item in cards)
+            {
+                <div class="card" @onclick="() => Estimate(item.Point)" value="@item.Point">
+                    <img src="@item.Img" alt="Avatar" style="width:100%">
+                </div>
+            }
+        </div>
+    </div>
+    <div id="rightpanel" class="col col-md-4">
+        <Attendee Id="@Id" IsOwner="@isOwner"></Attendee>
+        <Tickets @ref="@tickets" Id="@Id" IsOwner="@isOwner" onChooseTicket="@ChooseTicket"></Tickets>
+
+    </div>
+</div>
+@if (isShowAddUserPopup)
+{
+    <div class="modal" tabindex="-1"  style="display:block"  role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body row">
+                    <h6 class="col col-md-4">Input your name:</h6>
+                    <input maxlength="500" class="col col-md-8" id="username" @bind="@UserName" @oninput="@((e) => { UserName=(string)e.Value;})" />
+                </div>
+                <div class="modal-footer">
+                    <button id="saveName" type="button" class="btn btn-primary" @onclick="OnSaveUsername">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@if (isShowEstimatedInfo)
+{
+    <div class="modal fade show" id="myModal" style="display:block" aria-modal="true" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+            <div class="modal-header">
+                    <h5 class="modal-title">Estimated</h5>
+                    <button type="button" class="close btn btn-close" @onclick="@ModalCancel"></button>
+                </div>
+
+                <!-- Modal body -->
+            <div class="modal-body">
+                    <h5>Average: <span style="color:green;font-weight:bold;">@estimatedInfo.Point</span> </h5>
+                    <table class="table table-hover">
+                        <tbody>
+                            @if (estimatedInfo != null && estimatedInfo.EstimatedPoints != null)
+                            {
+                                foreach (var item in estimatedInfo.EstimatedPoints)
+                                {
+                                    <tr><td>@item.UserName</td><td>@item.Point</td></tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                    <canvas id="estimateReport"></canvas>
+                </div>
+
+                <!-- Modal footer -->
+            <div class="modal-footer">
+                    <button type="button" class="btn" @onclick="@ModalCancel">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+}
+
+@code {
+    [Parameter]
+    public string Id { get; set; }
+
+    Tickets tickets;
+    EstimatedInfo estimatedInfo = new EstimatedInfo();
+    bool isShowEstimatedInfo = false;
+    bool isDisplayEstimate = false;
+    bool isOwner = false;
+    bool isShowAddUserPopup = true;
+    string isShowCard = "none";
+    string UserName = "";
+    string RoomName = "";
+    private HubConnection? hubConnection;
+    string CurrentItem = "";
+    long CurrentItemId = 0;
+
+    string EstimationData = "";
+
+    List<ScrumCard> cards = new List<ScrumCard>
+    {
+         new ScrumCard{Point = 0, Name = "0", Img = "card/0.jpg"},
+         new ScrumCard{Point = (decimal)0.5, Name = "0.5", Img = "card/12.jpg"},
+         new ScrumCard{Point = 1, Name = "1", Img = "card/1.jpg"},
+         new ScrumCard{Point = 2, Name = "2", Img = "card/2.jpg"},
+         new ScrumCard{Point = 3, Name = "3", Img = "card/3.jpg"},
+         new ScrumCard{Point = 5, Name = "5", Img = "card/5.jpg"},
+         new ScrumCard{Point = 8, Name = "8", Img = "card/8.jpg"},
+         new ScrumCard{Point = 13, Name = "13", Img = "card/13.jpg"},
+         new ScrumCard{Point = 21, Name = "21", Img = "card/21.jpg"},
+         new ScrumCard{Point = 99, Name = "?", Img = "card/unknown.jpg"}
+    };
+
+    List<Color> _allColor = new List<Color>
+    {
+        Color.FromArgb(204, 255, 245),//0
+        Color.FromArgb(204, 204, 255),//0.5
+        Color.FromArgb(128, 128, 255),//1
+        Color.FromArgb(163, 102, 255),//2
+        Color.FromArgb(224, 133, 194),//3
+        Color.FromArgb(203, 52, 153),//5
+        Color.FromArgb(204, 41, 0),//8
+        Color.FromArgb(128, 26, 0),//13
+        Color.FromArgb(102, 102, 153),
+        Color.FromArgb(0, 153, 204)
+    };
+
+    protected override async Task OnInitializedAsync()
+    {
+        var response = await Http.GetAsync("Scrum/name?id=" + Id);
+        RoomName = await response.Content.ReadAsStringAsync();
+
+        isOwner = await localStorage.GetItemAsync<bool>("roomId-" + Id);
+        UserName = await localStorage.GetItemAsync<string>("_currentUser");
+
+        StateHasChanged();
+
+        await base.OnInitializedAsync();
+
+        hubConnection = new HubConnectionBuilder()
+           .WithUrl(NavManager.ToAbsoluteUri("/chathub"))
+           .Build();
+
+        hubConnection.On<string, string, string>("Broadcast", async (id, action, data) =>
+        {
+            if (id == Id)
+            {
+                if (action == "estimated")
+                {
+                    isShowEstimatedInfo = true;
+                    isShowCard = "none";
+                    EstimatedInfo();
+                    StateHasChanged();
+                }
+            }
+            JSRuntime.InvokeVoidAsync("receive", id, action, data);
+            StateHasChanged();
+        });
+
+        await hubConnection.StartAsync();
+    }
+
+    public bool IsConnected =>
+     hubConnection?.State == HubConnectionState.Connected;
+
+
+    async Task SendMessage(string message, string data)
+    {
+        await hubConnection.SendAsync("Broadcast", Id, message, data);
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        if (hubConnection is not null)
+        {
+            await hubConnection.DisposeAsync();
+        }
+    }
+
+    async Task OnSaveUsername()
+    {
+        if (string.IsNullOrEmpty(UserName))
+        {
+            UserName = JoinedName.RandomArrayEntries;
+        }
+        isShowAddUserPopup = false;
+        localStorage.SetItemAsync<string>("_currentUser", UserName);
+        JSRuntime.InvokeVoidAsync("onSaveUsername");
+
+        var strContent = JsonConvert.SerializeObject(new { });
+        var content = new StringContent(strContent, Encoding.UTF8, "application/json");
+        await Http.PostAsync($"Scrum/join?id={Id}&Username={UserName}", content);
+
+        await SendMessage("join", UserName);
+    }
+
+    void ChooseTicket()
+    {
+        isShowCard = tickets.CurrentItem != null && tickets.CurrentItem.Point == null ? "block" : "none";
+        isDisplayEstimate = tickets.CurrentItem != null;
+        CurrentItem = tickets.CurrentItem?.TicketName;
+        CurrentItemId = tickets.CurrentItem?.Id ?? 0;
+    }
+
+    #region Manage Estimation
+    async Task Estimate(decimal point)
+    {
+        var strContent = JsonConvert.SerializeObject(new { });
+        var content = new StringContent(strContent, Encoding.UTF8, "application/json");
+
+        await Http.PostAsync($"Scrum/estimate?roomId={Id}&username={UserName}&ticketId={CurrentItemId}&point={point}", content);
+
+        await JSRuntime.InvokeVoidAsync("alert", "Estimation sent!");
+
+        await SendMessage("estimate", point.ToString());
+    }
+
+    async Task Estimated()
+    {
+        if (isOwner)
+        {
+            isDisplayEstimate = false;
+            var strContent = JsonConvert.SerializeObject(new { });
+            var content = new StringContent(strContent, Encoding.UTF8, "application/json");
+
+            var response = await Http.PostAsync($"Scrum/estimated?ticketId={CurrentItemId}&roomId={Id}", content);
+            var storyPoint = await response.Content.ReadAsStringAsync();
+            await SendMessage("estimated", storyPoint);
+        }
+    }
+
+    async Task EstimatedInfo()
+    {
+        estimatedInfo = await Http.GetFromJsonAsync<EstimatedInfo>($"Scrum/estimatedInfo?ticketId={CurrentItemId}&roomId={Id}");
+
+        isShowEstimatedInfo = true;
+        var listPoint = new List<int>();
+        foreach (var card in cards)
+        {
+            listPoint.Add(estimatedInfo.EstimatedPoints.Count(s => s.Point == card.Point));
+        }
+
+        EstimationData = JsonConvert.SerializeObject(listPoint);
+        StateHasChanged();
+        JSRuntime.InvokeVoidAsync("OnGenerateChart");
+
+        StateHasChanged();
+
+    }
+
+    void ModalCancel()
+    {
+        isShowEstimatedInfo = false;
+        estimatedInfo = new ScrumEstimationWeb.Shared.EstimatedInfo();
+        //_config.Data.Datasets.Clear();
+
+        //_chart.Update();
+        StateHasChanged();
+    }
+
+    #endregion
+
+}

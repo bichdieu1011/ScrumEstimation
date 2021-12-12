@@ -1,0 +1,54 @@
+﻿@page "/"
+@inject HttpClient Http
+@inject IJSRuntime JSRuntime
+@inject NavigationManager NavManager
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
+@using Newtonsoft.Json 
+@using System.Text;
+
+<PageTitle>Index</PageTitle>
+
+<input id="room-id" type="text" @bind="@roomUrl" @oninput="@((e) => { roomUrl=(string)e.Value;})" @onclick="CopyRoomId" />
+
+<button disabled=@(!disable) class="btn btn-primary" @onclick="GenerateRoom">Create Scrum Room</button>
+
+<button disabled=@(disable) class="btn btn-primary" @onclick="GoToRoom">Go To Room</button>
+
+@code {
+    private bool disable = true;
+    private string roomId = "";
+    private string roomUrl = "";
+    private async Task GenerateRoom()
+    {
+        var strContent = JsonConvert.SerializeObject(roomUrl);
+        var content = new StringContent(strContent, Encoding.UTF8, "application/json");
+
+        var response = await Http.PostAsync("Scrum", content);
+        roomId = await response.Content.ReadAsStringAsync() ;
+
+        roomUrl = Http.BaseAddress + "Room/" + roomId;
+        disable = false;
+    }
+
+    void GoToRoom()
+    {
+        localStorage.SetItemAsync("roomId-" + roomId, true);
+        NavManager.NavigateTo("/room/" + roomId);
+    }
+
+    void CopyRoomId()
+    {
+        if (!string.IsNullOrEmpty(roomId))
+        {
+            JSRuntime.InvokeVoidAsync("copyRoomIdClipboard");
+        }
+    }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+    }
+}
+
+
+

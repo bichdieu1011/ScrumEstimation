@@ -1,0 +1,13 @@
+﻿#itemList {
+    width: 100%;
+    height: 300px;
+    overflow-y: scroll;
+}
+
+    #itemList ul li{
+        cursor: pointer;
+    }
+
+        #itemList ul li[highlight] {
+            font-weight: bolder;
+        }

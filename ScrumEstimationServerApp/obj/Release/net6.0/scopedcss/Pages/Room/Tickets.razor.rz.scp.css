@@ -1,0 +1,13 @@
+#itemList[b-luvhjk3ljr] {
+    width: 100%;
+    height: 300px;
+    overflow-y: scroll;
+}
+
+    #itemList ul li[b-luvhjk3ljr]{
+        cursor: pointer;
+    }
+
+        #itemList ul li[highlight][b-luvhjk3ljr] {
+            font-weight: bolder;
+        }

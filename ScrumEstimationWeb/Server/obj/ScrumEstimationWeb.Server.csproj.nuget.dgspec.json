@@ -1,0 +1,252 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Server\\ScrumEstimationWeb.Server.csproj": {}
+  },
+  "projects": {
+    "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Client\\ScrumEstimationWeb.Client.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Client\\ScrumEstimationWeb.Client.csproj",
+        "projectName": "ScrumEstimationWeb.Client",
+        "projectPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Client\\ScrumEstimationWeb.Client.csproj",
+        "packagesPath": "C:\\Users\\BichVuThi\\.nuget\\packages\\",
+        "outputPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Client\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\BichVuThi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Shared\\ScrumEstimationWeb.Shared.csproj": {
+                "projectPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Shared\\ScrumEstimationWeb.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Blazored.LocalStorage": {
+              "target": "Package",
+              "version": "[4.1.5, )"
+            },
+            "ChartJs.Blazor.Fork": {
+              "target": "Package",
+              "version": "[2.0.2, )"
+            },
+            "Microsoft.AspNetCore.Components.WebAssembly": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.AspNetCore.Components.WebAssembly.DevServer": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.AspNetCore.SignalR.Client": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "jQuery": {
+              "target": "Package",
+              "version": "[3.6.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
+              "version": "[6.0.0, 6.0.0]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "browser-wasm": {
+          "#import": []
+        }
+      }
+    },
+    "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Server\\ScrumEstimationWeb.Server.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Server\\ScrumEstimationWeb.Server.csproj",
+        "projectName": "ScrumEstimationWeb.Server",
+        "projectPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Server\\ScrumEstimationWeb.Server.csproj",
+        "packagesPath": "C:\\Users\\BichVuThi\\.nuget\\packages\\",
+        "outputPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Server\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\BichVuThi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Client\\ScrumEstimationWeb.Client.csproj": {
+                "projectPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Client\\ScrumEstimationWeb.Client.csproj"
+              },
+              "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Shared\\ScrumEstimationWeb.Shared.csproj": {
+                "projectPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Shared\\ScrumEstimationWeb.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Components.WebAssembly.Server": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.AspNetCore.SignalR.Client": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.AspNetCore.SignalR.Common": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.AspNetCore.SignalR.Core": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Shared\\ScrumEstimationWeb.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Shared\\ScrumEstimationWeb.Shared.csproj",
+        "projectName": "ScrumEstimationWeb.Shared",
+        "projectPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Shared\\ScrumEstimationWeb.Shared.csproj",
+        "packagesPath": "C:\\Users\\BichVuThi\\.nuget\\packages\\",
+        "outputPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\BichVuThi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

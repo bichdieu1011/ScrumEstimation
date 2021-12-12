@@ -1,0 +1,101 @@
+﻿
+@using System.Text
+@using Microsoft.AspNetCore.SignalR.Client
+@using Newtonsoft.Json
+@using ScrumEstimationServerApp.Data
+
+@inject ScrumService scrumService
+@inject IJSRuntime JSRuntime
+@inject NavigationManager NavManager
+@implements IAsyncDisposable
+
+<h5>List attendees: </h5>
+<div id="listAttended">
+    <ul>
+        @foreach (var item in users)
+        {
+            <li @onclick="() => RemoveUser(item.UserName)" highlight="@item.IsEstimate" id="@item.UserName">@item.UserName</li>
+        }
+    </ul>
+</div>
+
+@code {
+    [Parameter]
+    public string Id { get; set; }
+
+    [Parameter]
+    public bool IsOwner { get; set; }
+
+    public HubConnection? hubConnection;
+
+    UserModel[] users = new UserModel[] { };
+
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            LoadUsers();
+            StateHasChanged();
+        }
+        base.OnAfterRenderAsync(firstRender);
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        base.OnInitialized();
+
+        hubConnection = new HubConnectionBuilder()
+         .WithUrl(NavManager.ToAbsoluteUri("/chathub"))
+         .Build();
+
+        hubConnection.On<string, string, string>("Broadcast", async (id, action, data) =>
+         {
+             if (id == Id)
+             {
+                 if (action == "join" || action == "leave" || action == "estimate"|| action == "chooseTicket")
+                 {
+                     LoadUsers();
+                     StateHasChanged();
+                 }
+             }
+
+         });
+
+        await hubConnection.StartAsync();
+    }
+
+    public bool IsConnected =>
+     hubConnection?.State == HubConnectionState.Connected;
+
+
+    async Task LoadUsers()
+    {
+        users = scrumService.getUsers(Id).ToArray();
+        StateHasChanged();
+    }
+
+    async Task RemoveUser(string username)
+    {
+        if (IsOwner)
+        {
+            bool confirmed = await JSRuntime.InvokeAsync<bool>("confirm", "Do you want to remove that user?");
+            if (confirmed)
+            {
+                var strContent = JsonConvert.SerializeObject(new { });
+                var content = new StringContent(strContent, Encoding.UTF8, "application/json");
+                scrumService.RemoveUser(Id, username);
+                if(IsConnected)
+                    await hubConnection.SendAsync("Broadcast", Id, "leave", username);
+            }
+        }
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        if (hubConnection is not null)
+        {
+            await hubConnection.DisposeAsync();
+        }
+    }
+}

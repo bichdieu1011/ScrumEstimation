@@ -1,0 +1,51 @@
+﻿@page "/"
+@using Newtonsoft.Json 
+@using System.Text;
+@using ScrumEstimationServerApp.Data
+@inject ScrumService scrumService
+@inject IJSRuntime JSRuntime
+@inject NavigationManager NavManager
+
+
+<PageTitle>Index</PageTitle>
+
+<input id="room-id" type="text" @bind="@roomUrl" @oninput="@((e) => { roomUrl=(string)e.Value;})" @onclick="CopyRoomId" />
+
+<button disabled=@(!disable) class="btn btn-primary" @onclick="GenerateRoom">Create Scrum Room</button>
+
+<button disabled=@(disable) class="btn btn-primary" @onclick="GoToRoom">Go To Room</button>
+
+@code {
+    private bool disable = true;
+    private string roomId = "";
+    private string roomUrl = "";
+    private async Task GenerateRoom()
+    {
+        roomId = scrumService.CreateEstimationRoom(roomUrl);
+
+        roomUrl = NavManager.BaseUri + "Room/" + roomId;
+        disable = false;
+    }
+
+    void GoToRoom()
+    {
+         JSRuntime.InvokeVoidAsync("setRoomOwner", roomId);
+        NavManager.NavigateTo("/room/" + roomId);
+    }
+
+    void CopyRoomId()
+    {
+        if (!string.IsNullOrEmpty(roomId))
+        {
+            JSRuntime.InvokeVoidAsync("copyRoomIdClipboard");
+        }
+    }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+    }
+}
+
+
+

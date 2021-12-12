@@ -1,0 +1,68 @@
+﻿@using Newtonsoft.Json
+@using ScrumEstimationServerApp.Data
+@using System.Text
+
+@inject IJSRuntime JSRuntime
+@inject ScrumService scrumService
+
+<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">ScrumEstimationServerApp</a>
+        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</div>
+
+<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+    <nav class="flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"></span> Home
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <ul class="nav-submenu collapse list-unstyled" id="userSubMenu">
+                @if (allRoom != null)
+                {
+                    @foreach (var item in allRoom)
+                    {
+                        <li class="nav-subitem">
+                            <NavLink target="_blank" href=@{
+                        $"room/{item.Id}"
+}
+                             style="cursor:pointer;display: inline-block;max-width: 190px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">
+                                <span aria-hidden="true"></span> @item.Name
+                            </NavLink>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+    </nav>
+</div>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    RoomModel[] allRoom = new RoomModel[] { };
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            var romIds = await JSRuntime.InvokeAsync<string[]>("getALlLocalStorage");
+
+            allRoom = scrumService.GetRooms(romIds).ToArray();
+            StateHasChanged();
+        }
+        base.OnAfterRenderAsync(firstRender);
+    }
+}

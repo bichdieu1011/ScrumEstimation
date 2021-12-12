@@ -1,0 +1,88 @@
+﻿@using Microsoft.AspNetCore.SignalR.Client
+@using ScrumEstimationWeb.Shared
+@using System.Text
+
+@inject HttpClient Http
+
+@inject IJSRuntime JSRuntime
+@inject NavigationManager NavManager
+@implements IAsyncDisposable
+
+<h5>List attendees: </h5>
+<div id="listAttended">
+    <ul>
+        @foreach (var item in users)
+        {
+            <li @onclick="() => RemoveUser(item.UserName)" highlight="@item.IsEstimate" id="@item.UserName">@item.UserName</li>
+        }
+    </ul>
+</div>
+
+@code {
+    [Parameter]
+    public string Id { get; set; }
+
+    [Parameter]
+    public bool IsOwner { get; set; }
+
+    public HubConnection? hubConnection;
+
+    UserModel[] users = new UserModel[] { };
+
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        base.OnInitialized();
+        LoadUsers();
+
+        hubConnection = new HubConnectionBuilder()
+         .WithUrl(NavManager.ToAbsoluteUri("/chathub"))
+         .Build();
+
+        hubConnection.On<string, string, string>("Broadcast", async (id, action, data) =>
+         {
+             if (id == Id)
+             {
+                 if (action == "join" || action == "leave" || action == "estimate")
+                 {
+                     LoadUsers();
+                     StateHasChanged();
+                 }
+             }
+
+         });
+
+        await hubConnection.StartAsync();
+    }
+
+    async Task LoadUsers()
+    {
+        users = await Http.GetFromJsonAsync<UserModel[]>($"Scrum/getUsers?id={Id}");
+        StateHasChanged();
+    }
+
+    async Task RemoveUser(string username)
+    {
+        if (IsOwner)
+        {
+            bool confirmed = await JSRuntime.InvokeAsync<bool>("confirm", "Do you want to remove that user?");
+            if (confirmed)
+            {
+                var strContent = JsonConvert.SerializeObject(new { });
+                var content = new StringContent(strContent, Encoding.UTF8, "application/json");
+                await Http.PostAsync($"Scrum/removeUser?id={Id}&username={username}", content);
+
+                await hubConnection.SendAsync("Broadcast", Id, "leave", username);
+            }
+        }
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        if (hubConnection is not null)
+        {
+            await hubConnection.DisposeAsync();
+        }
+    }
+}

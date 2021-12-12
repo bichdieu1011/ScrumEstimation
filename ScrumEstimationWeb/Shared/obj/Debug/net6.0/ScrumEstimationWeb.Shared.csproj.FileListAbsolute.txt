@@ -1,0 +1,12 @@
+D:\Working\Tool\ScrumEstimation\ScrumEstimationWeb\Shared\bin\Debug\net6.0\ScrumEstimationWeb.Shared.deps.json
+D:\Working\Tool\ScrumEstimation\ScrumEstimationWeb\Shared\bin\Debug\net6.0\ScrumEstimationWeb.Shared.dll
+D:\Working\Tool\ScrumEstimation\ScrumEstimationWeb\Shared\bin\Debug\net6.0\ref\ScrumEstimationWeb.Shared.dll
+D:\Working\Tool\ScrumEstimation\ScrumEstimationWeb\Shared\bin\Debug\net6.0\ScrumEstimationWeb.Shared.pdb
+D:\Working\Tool\ScrumEstimation\ScrumEstimationWeb\Shared\obj\Debug\net6.0\ScrumEstimationWeb.Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\Working\Tool\ScrumEstimation\ScrumEstimationWeb\Shared\obj\Debug\net6.0\ScrumEstimationWeb.Shared.AssemblyInfoInputs.cache
+D:\Working\Tool\ScrumEstimation\ScrumEstimationWeb\Shared\obj\Debug\net6.0\ScrumEstimationWeb.Shared.AssemblyInfo.cs
+D:\Working\Tool\ScrumEstimation\ScrumEstimationWeb\Shared\obj\Debug\net6.0\ScrumEstimationWeb.Shared.csproj.CoreCompileInputs.cache
+D:\Working\Tool\ScrumEstimation\ScrumEstimationWeb\Shared\obj\Debug\net6.0\ScrumEstimationWeb.Shared.dll
+D:\Working\Tool\ScrumEstimation\ScrumEstimationWeb\Shared\obj\Debug\net6.0\ref\ScrumEstimationWeb.Shared.dll
+D:\Working\Tool\ScrumEstimation\ScrumEstimationWeb\Shared\obj\Debug\net6.0\ScrumEstimationWeb.Shared.pdb
+D:\Working\Tool\ScrumEstimation\ScrumEstimationWeb\Shared\obj\Debug\net6.0\ScrumEstimationWeb.Shared.csproj.AssemblyReference.cache

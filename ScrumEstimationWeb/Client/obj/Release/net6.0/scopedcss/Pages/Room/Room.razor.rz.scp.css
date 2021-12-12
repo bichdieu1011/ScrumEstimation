@@ -1,0 +1,33 @@
+.card[b-hu4tj93f08] {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px; /* 5px rounded corners */
+    width: 150px;
+    display: inline-block;
+
+}
+
+    .card:hover[b-hu4tj93f08] {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        cursor: pointer;
+    }
+
+.container[b-hu4tj93f08] {
+    padding: 2px 16px;
+}
+
+/* Add rounded corners to the top left and the top right corner of the image */
+img[b-hu4tj93f08] {
+    border-radius: 5px 5px 0 0;
+}
+
+#estimate[b-hu4tj93f08] {
+    display: table;
+    max-width: 100%;
+    height: 80vh;
+}
+
+div.card[b-hu4tj93f08]{
+    padding:5px;
+    margin:5px;
+}

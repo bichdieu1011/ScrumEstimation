@@ -1,0 +1,72 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = ScrumEstimationServerApp
+build_property.RootNamespace = ScrumEstimationServerApp
+build_property.ProjectDir = D:\Working\Tool\ScrumEstimation\ScrumEstimationServerApp\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\Working\Tool\ScrumEstimation\ScrumEstimationServerApp
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/Working/Tool/ScrumEstimation/ScrumEstimationServerApp/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Working/Tool/ScrumEstimation/ScrumEstimationServerApp/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Working/Tool/ScrumEstimation/ScrumEstimationServerApp/Pages/FetchData.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Working/Tool/ScrumEstimation/ScrumEstimationServerApp/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Working/Tool/ScrumEstimation/ScrumEstimationServerApp/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Working/Tool/ScrumEstimation/ScrumEstimationServerApp/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Working/Tool/ScrumEstimation/ScrumEstimationServerApp/Pages/Room/Attendee.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUm9vbVxBdHRlbmRlZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-9275eyjz5j
+
+[D:/Working/Tool/ScrumEstimation/ScrumEstimationServerApp/Pages/Room/Room.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUm9vbVxSb29tLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-kq81r0lm9t
+
+[D:/Working/Tool/ScrumEstimation/ScrumEstimationServerApp/Pages/Room/Tickets.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUm9vbVxUaWNrZXRzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-luvhjk3ljr
+
+[D:/Working/Tool/ScrumEstimation/ScrumEstimationServerApp/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-wrrmblzsvc
+
+[D:/Working/Tool/ScrumEstimation/ScrumEstimationServerApp/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-bn607m3qrz
+
+[D:/Working/Tool/ScrumEstimation/ScrumEstimationServerApp/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Working/Tool/ScrumEstimation/ScrumEstimationServerApp/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Working/Tool/ScrumEstimation/ScrumEstimationServerApp/Pages/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

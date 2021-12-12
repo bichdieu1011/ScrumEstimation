@@ -1,0 +1,139 @@
+﻿@using ChartJs.Blazor.Common
+@using ChartJs.Blazor.PieChart
+@using ChartJs.Blazor.Util
+@using ScrumEstimationWeb.Shared
+@using Microsoft.AspNetCore.SignalR.Client
+@using System.Text
+@using System.Drawing
+@inject HttpClient Http
+
+@inject IJSRuntime JSRuntime
+@inject NavigationManager NavManager
+@implements IAsyncDisposable
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
+
+<h5>List tickets: </h5>
+@if (IsOwner)
+    {
+        <input placeholder="Add new ticket..." maxlength="500" @bind="@newTicket" @oninput="@((e) => { newTicket=(string)e.Value;})" />
+        <button class="btn btn-primary" @onclick="@AddTicket">Add</button>
+    }
+<div id="itemList">
+    
+    <ul>
+        @foreach (var item in listTicket)
+        {
+            <li id="@item" highlight="@item.IsPick" @onclick="() => ChooseTicket(item)">@item.TicketName - <span>@item.Point</span></li>
+        }
+    </ul>
+
+</div>
+
+@code {
+
+
+    [Parameter]
+    public string Id { get; set; }
+
+    [Parameter]
+    public bool IsOwner { get; set; }
+
+    [Parameter]
+    public EventCallback onChooseTicket { get; set; }
+
+    TicketModel[] listTicket = new TicketModel[] { };
+    string newTicket = "";
+
+    public TicketModel CurrentItem { get; set; }
+
+    public HubConnection? hubConnection;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        await base.OnInitializedAsync();
+
+        LoadTickets();
+
+        hubConnection = new HubConnectionBuilder()
+           .WithUrl(NavManager.ToAbsoluteUri("/chathub"))
+           .Build();
+
+        hubConnection.On<string, string, string>("Broadcast", async (id, action, data) =>
+        {
+            if (id == Id)
+            {
+                if (action == "chooseTicket" ||action == "addTicket" || action == "estimated")
+                {
+                    LoadTickets();
+
+                    StateHasChanged();
+                }
+            }
+            JSRuntime.InvokeVoidAsync("receive", id, action, data);
+            StateHasChanged();
+        });
+
+        await hubConnection.StartAsync();
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        if (hubConnection is not null)
+        {
+            await hubConnection.DisposeAsync();
+        }
+    }
+
+    async Task AddTicket()
+    {
+        var strContent = JsonConvert.SerializeObject(new { });
+        var content = new StringContent(strContent, Encoding.UTF8, "application/json");
+
+        var respone = await Http.PostAsync($"Scrum/addTicket?id={Id}&ticketName={newTicket}", content);
+        var id = await respone.Content.ReadAsStringAsync();
+
+        newTicket = "";
+
+        await hubConnection.SendAsync("Broadcast", Id, "addTicket", "");
+    }
+
+    async Task LoadTickets()
+    {
+        listTicket = await Http.GetFromJsonAsync<TicketModel[]>($"Scrum/getTicket?id={Id}");
+        CurrentItem = listTicket.FirstOrDefault(s => s.IsPick == true);
+
+        await onChooseTicket.InvokeAsync();
+        StateHasChanged();
+    }
+
+    async Task ChooseTicket(TicketModel item)
+    {
+        if (IsOwner)
+        {
+            //isDisplayEstimate = true;
+            bool confirmed = await JSRuntime.InvokeAsync<bool>("confirm", $"Do you want to estimate item {item.TicketName}?");
+            if (confirmed)
+            {
+                CurrentItem = new TicketModel
+                    {
+                        Id = item.Id,
+                        IsPick = true,
+                        Point = null,
+                        TicketName = item.TicketName
+                    };
+
+                var strRequestContent = JsonConvert.SerializeObject(new { });
+                var content = new StringContent(strRequestContent, Encoding.UTF8, "application/json");
+
+                await Http.PostAsync($"Scrum/pickTicket?id={Id}&ticketname={item.TicketName}", content);
+
+                var strContent = JsonConvert.SerializeObject(item);
+                await hubConnection.SendAsync("Broadcast", Id, "chooseTicket", strContent);
+            }
+        }
+    }
+
+
+}

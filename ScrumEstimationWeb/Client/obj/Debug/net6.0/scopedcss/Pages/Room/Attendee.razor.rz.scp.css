@@ -1,0 +1,14 @@
+#listAttended[b-uh1wjb96u4] {
+    width: 100%;
+    height: 200px;
+    overflow-y: scroll;
+}
+
+    #listAttended ul li[b-uh1wjb96u4] {
+        cursor: pointer;
+    }
+
+        #listAttended ul li[highlight][b-uh1wjb96u4] {
+            font-weight: bolder;
+            color: green;
+        }
