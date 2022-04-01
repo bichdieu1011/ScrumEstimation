@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Server\\ScrumEstimationWeb.Server.csproj": {}
+    "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationWeb\\Server\\ScrumEstimationWeb.Server.csproj": {}
   },
   "projects": {
-    "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Client\\ScrumEstimationWeb.Client.csproj": {
+    "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationWeb\\Client\\ScrumEstimationWeb.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Client\\ScrumEstimationWeb.Client.csproj",
+        "projectUniqueName": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationWeb\\Client\\ScrumEstimationWeb.Client.csproj",
         "projectName": "ScrumEstimationWeb.Client",
-        "projectPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Client\\ScrumEstimationWeb.Client.csproj",
+        "projectPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationWeb\\Client\\ScrumEstimationWeb.Client.csproj",
         "packagesPath": "C:\\Users\\BichVuThi\\.nuget\\packages\\",
-        "outputPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Client\\obj\\",
+        "outputPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationWeb\\Client\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\BichVuThi\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Shared\\ScrumEstimationWeb.Shared.csproj": {
-                "projectPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Shared\\ScrumEstimationWeb.Shared.csproj"
+              "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationWeb\\Shared\\ScrumEstimationWeb.Shared.csproj": {
+                "projectPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationWeb\\Shared\\ScrumEstimationWeb.Shared.csproj"
               }
             }
           }
@@ -104,14 +104,14 @@
         }
       }
     },
-    "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Server\\ScrumEstimationWeb.Server.csproj": {
+    "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationWeb\\Server\\ScrumEstimationWeb.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Server\\ScrumEstimationWeb.Server.csproj",
+        "projectUniqueName": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationWeb\\Server\\ScrumEstimationWeb.Server.csproj",
         "projectName": "ScrumEstimationWeb.Server",
-        "projectPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Server\\ScrumEstimationWeb.Server.csproj",
+        "projectPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationWeb\\Server\\ScrumEstimationWeb.Server.csproj",
         "packagesPath": "C:\\Users\\BichVuThi\\.nuget\\packages\\",
-        "outputPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Server\\obj\\",
+        "outputPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationWeb\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\BichVuThi\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -128,11 +128,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Client\\ScrumEstimationWeb.Client.csproj": {
-                "projectPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Client\\ScrumEstimationWeb.Client.csproj"
+              "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationWeb\\Client\\ScrumEstimationWeb.Client.csproj": {
+                "projectPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationWeb\\Client\\ScrumEstimationWeb.Client.csproj"
               },
-              "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Shared\\ScrumEstimationWeb.Shared.csproj": {
-                "projectPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Shared\\ScrumEstimationWeb.Shared.csproj"
+              "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationWeb\\Shared\\ScrumEstimationWeb.Shared.csproj": {
+                "projectPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationWeb\\Shared\\ScrumEstimationWeb.Shared.csproj"
               }
             }
           }
@@ -194,14 +194,14 @@
         }
       }
     },
-    "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Shared\\ScrumEstimationWeb.Shared.csproj": {
+    "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationWeb\\Shared\\ScrumEstimationWeb.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Shared\\ScrumEstimationWeb.Shared.csproj",
+        "projectUniqueName": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationWeb\\Shared\\ScrumEstimationWeb.Shared.csproj",
         "projectName": "ScrumEstimationWeb.Shared",
-        "projectPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Shared\\ScrumEstimationWeb.Shared.csproj",
+        "projectPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationWeb\\Shared\\ScrumEstimationWeb.Shared.csproj",
         "packagesPath": "C:\\Users\\BichVuThi\\.nuget\\packages\\",
-        "outputPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Shared\\obj\\",
+        "outputPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationWeb\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\BichVuThi\\AppData\\Roaming\\NuGet\\NuGet.Config",

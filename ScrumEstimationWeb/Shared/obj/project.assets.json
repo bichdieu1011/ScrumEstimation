@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Shared\\ScrumEstimationWeb.Shared.csproj",
+      "projectUniqueName": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationWeb\\Shared\\ScrumEstimationWeb.Shared.csproj",
       "projectName": "ScrumEstimationWeb.Shared",
-      "projectPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Shared\\ScrumEstimationWeb.Shared.csproj",
+      "projectPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationWeb\\Shared\\ScrumEstimationWeb.Shared.csproj",
       "packagesPath": "C:\\Users\\BichVuThi\\.nuget\\packages\\",
-      "outputPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Shared\\obj\\",
+      "outputPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationWeb\\Shared\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\BichVuThi\\AppData\\Roaming\\NuGet\\NuGet.Config",

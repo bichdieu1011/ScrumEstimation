@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1Tg4/lNUhnUzqqAtZjjQr8lgS7q6DfcS2MEaEpX7jalRC38PlASnt4YG0DD1SVIHh3r4AKGNZYp/fqgi3y6q2Q==",
+  "dgSpecHash": "qdCyBtYZIsnrsDyJaFH/qnURMMygdGq3tmQUzPKC/mCrztRPGL+NQ11xqtq3xc7GlbS0wuIJXd/DFttA09n+Wg==",
   "success": true,
-  "projectFilePath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Client\\ScrumEstimationWeb.Client.csproj",
+  "projectFilePath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationWeb\\Client\\ScrumEstimationWeb.Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\BichVuThi\\.nuget\\packages\\blazored.localstorage\\4.1.5\\blazored.localstorage.4.1.5.nupkg.sha512",
     "C:\\Users\\BichVuThi\\.nuget\\packages\\chartjs.blazor.fork\\2.0.2\\chartjs.blazor.fork.2.0.2.nupkg.sha512",

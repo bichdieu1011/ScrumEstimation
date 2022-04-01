@@ -12,8 +12,10 @@
           "Microsoft.AspNetCore.SignalR.Client": "6.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.0",
+          "Microsoft.Extensions.Caching.Memory": "6.0.1",
           "Microsoft.Extensions.DependencyInjection": "6.0.0",
-          "Newtonsoft.Json": "13.0.1"
+          "Newtonsoft.Json": "13.0.1",
+          "Quartz.Extensions.Hosting": "3.4.0"
         },
         "runtime": {
           "ScrumEstimationServerApp.dll": {}
@@ -184,7 +186,7 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Abstractions": "6.0.0",
           "Microsoft.EntityFrameworkCore.Analyzers": "6.0.0",
-          "Microsoft.Extensions.Caching.Memory": "6.0.0",
+          "Microsoft.Extensions.Caching.Memory": "6.0.1",
           "Microsoft.Extensions.DependencyInjection": "6.0.0",
           "Microsoft.Extensions.Logging": "6.0.0",
           "System.Collections.Immutable": "6.0.0",
@@ -235,13 +237,19 @@
           "Microsoft.Extensions.Primitives": "6.0.0"
         }
       },
-      "Microsoft.Extensions.Caching.Memory/6.0.0": {
+      "Microsoft.Extensions.Caching.Memory/6.0.1": {
         "dependencies": {
           "Microsoft.Extensions.Caching.Abstractions": "6.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
           "Microsoft.Extensions.Logging.Abstractions": "6.0.0",
           "Microsoft.Extensions.Options": "6.0.0",
           "Microsoft.Extensions.Primitives": "6.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Caching.Memory.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.222.6406"
+          }
         }
       },
       "Microsoft.Extensions.Configuration.Abstractions/6.0.0": {
@@ -257,6 +265,19 @@
       },
       "Microsoft.Extensions.DependencyInjection.Abstractions/6.0.0": {},
       "Microsoft.Extensions.Features/6.0.0": {},
+      "Microsoft.Extensions.FileProviders.Abstractions/2.1.1": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "6.0.0"
+        }
+      },
+      "Microsoft.Extensions.Hosting.Abstractions/2.1.1": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
+          "Microsoft.Extensions.FileProviders.Abstractions": "2.1.1",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.0"
+        }
+      },
       "Microsoft.Extensions.Logging/6.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "6.0.0",
@@ -374,6 +395,45 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
             "assemblyVersion": "13.0.0.0",
             "fileVersion": "13.0.1.25517"
+          }
+        }
+      },
+      "Quartz/3.4.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.0",
+          "System.Configuration.ConfigurationManager": "4.7.0",
+          "System.Diagnostics.DiagnosticSource": "6.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Quartz.dll": {
+            "assemblyVersion": "3.4.0.0",
+            "fileVersion": "3.4.0.0"
+          }
+        }
+      },
+      "Quartz.Extensions.DependencyInjection/3.4.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
+          "Microsoft.Extensions.Options": "6.0.0",
+          "Quartz": "3.4.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Quartz.Extensions.DependencyInjection.dll": {
+            "assemblyVersion": "3.4.0.0",
+            "fileVersion": "3.4.0.0"
+          }
+        }
+      },
+      "Quartz.Extensions.Hosting/3.4.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Hosting.Abstractions": "2.1.1",
+          "Quartz.Extensions.DependencyInjection": "3.4.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Quartz.Extensions.Hosting.dll": {
+            "assemblyVersion": "3.4.0.0",
+            "fileVersion": "3.4.0.0"
           }
         }
       },
@@ -688,12 +748,12 @@
       "path": "microsoft.extensions.caching.abstractions/6.0.0",
       "hashPath": "microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512"
     },
-    "Microsoft.Extensions.Caching.Memory/6.0.0": {
+    "Microsoft.Extensions.Caching.Memory/6.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Ve3BlCzhAlVp5IgO3+8dacAhZk1A0GlIlFNkAcfR2TfAibLKWIt5DhVJZfu4YtW+XZ89OjYf/agMcgjDtPxdGA==",
-      "path": "microsoft.extensions.caching.memory/6.0.0",
-      "hashPath": "microsoft.extensions.caching.memory.6.0.0.nupkg.sha512"
+      "sha512": "sha512-B4y+Cev05eMcjf1na0v9gza6GUtahXbtY1JCypIgx3B4Ea/KAgsWyXEmW4q6zMbmTMtKzmPVk09rvFJirvMwTg==",
+      "path": "microsoft.extensions.caching.memory/6.0.1",
+      "hashPath": "microsoft.extensions.caching.memory.6.0.1.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration.Abstractions/6.0.0": {
       "type": "package",
@@ -722,6 +782,20 @@
       "sha512": "sha512-EE7RgQufEOvJlQZazvLUuba7thDQ8Pi4vprxzoByGdpkdZCTAK65AybfYxDf/jFsDjumLDK0E8lm6OqWyUZUKw==",
       "path": "microsoft.extensions.features/6.0.0",
       "hashPath": "microsoft.extensions.features.6.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.FileProviders.Abstractions/2.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UEQB5/QPuLYaCvScZQ9llhcks5xyEUKh41D615FoehRAF9UgGVmXHcCSOH8idHHLRoKm+OJJjEy1oywvuaL33w==",
+      "path": "microsoft.extensions.fileproviders.abstractions/2.1.1",
+      "hashPath": "microsoft.extensions.fileproviders.abstractions.2.1.1.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Hosting.Abstractions/2.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kVVdHnOFJbcXxgZzrT6nwkrWZTHL+47LT59S9J2Jp0BNO3EQWNEZHUUZMb/kKFV7LtW+bp+EuAOPNUqEcqI++Q==",
+      "path": "microsoft.extensions.hosting.abstractions/2.1.1",
+      "hashPath": "microsoft.extensions.hosting.abstractions.2.1.1.nupkg.sha512"
     },
     "Microsoft.Extensions.Logging/6.0.0": {
       "type": "package",
@@ -827,6 +901,27 @@
       "sha512": "sha512-ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
       "path": "newtonsoft.json/13.0.1",
       "hashPath": "newtonsoft.json.13.0.1.nupkg.sha512"
+    },
+    "Quartz/3.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-N8350OAlQhd8zKg0ARFikGjh3bfAW/CF/KVxu2fTIlAALB/oC1eg54n/QAPYR5ryHuYyDr5G8/Qa4k+D/7OFRQ==",
+      "path": "quartz/3.4.0",
+      "hashPath": "quartz.3.4.0.nupkg.sha512"
+    },
+    "Quartz.Extensions.DependencyInjection/3.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fYIHYFwVnzcwmkvE/cjx/YGmU+rZ5OkjuHmdNJz49gxA/dFnm8foSFxCmzYqyjLpHqQAbteOf1+43cROSvvmFw==",
+      "path": "quartz.extensions.dependencyinjection/3.4.0",
+      "hashPath": "quartz.extensions.dependencyinjection.3.4.0.nupkg.sha512"
+    },
+    "Quartz.Extensions.Hosting/3.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hdecxRzfafiHd33bAAV0dc7B2cmwJKchA0q3mNPnzye2zvc8h5w7wSP4WSUydfwht3DAAvoE8hg+iYH6SzFCbA==",
+      "path": "quartz.extensions.hosting/3.4.0",
+      "hashPath": "quartz.extensions.hosting.3.4.0.nupkg.sha512"
     },
     "System.Collections.Immutable/6.0.0": {
       "type": "package",

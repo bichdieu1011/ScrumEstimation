@@ -3631,11 +3631,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Server\\ScrumEstimationWeb.Server.csproj",
+      "projectUniqueName": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationWeb\\Server\\ScrumEstimationWeb.Server.csproj",
       "projectName": "ScrumEstimationWeb.Server",
-      "projectPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Server\\ScrumEstimationWeb.Server.csproj",
+      "projectPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationWeb\\Server\\ScrumEstimationWeb.Server.csproj",
       "packagesPath": "C:\\Users\\BichVuThi\\.nuget\\packages\\",
-      "outputPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Server\\obj\\",
+      "outputPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationWeb\\Server\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\BichVuThi\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3652,11 +3652,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Client\\ScrumEstimationWeb.Client.csproj": {
-              "projectPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Client\\ScrumEstimationWeb.Client.csproj"
+            "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationWeb\\Client\\ScrumEstimationWeb.Client.csproj": {
+              "projectPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationWeb\\Client\\ScrumEstimationWeb.Client.csproj"
             },
-            "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Shared\\ScrumEstimationWeb.Shared.csproj": {
-              "projectPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Shared\\ScrumEstimationWeb.Shared.csproj"
+            "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationWeb\\Shared\\ScrumEstimationWeb.Shared.csproj": {
+              "projectPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationWeb\\Shared\\ScrumEstimationWeb.Shared.csproj"
             }
           }
         }

@@ -2268,11 +2268,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Client\\ScrumEstimationWeb.Client.csproj",
+      "projectUniqueName": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationWeb\\Client\\ScrumEstimationWeb.Client.csproj",
       "projectName": "ScrumEstimationWeb.Client",
-      "projectPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Client\\ScrumEstimationWeb.Client.csproj",
+      "projectPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationWeb\\Client\\ScrumEstimationWeb.Client.csproj",
       "packagesPath": "C:\\Users\\BichVuThi\\.nuget\\packages\\",
-      "outputPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Client\\obj\\",
+      "outputPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationWeb\\Client\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\BichVuThi\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2289,8 +2289,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Shared\\ScrumEstimationWeb.Shared.csproj": {
-              "projectPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationWeb\\Shared\\ScrumEstimationWeb.Shared.csproj"
+            "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationWeb\\Shared\\ScrumEstimationWeb.Shared.csproj": {
+              "projectPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationWeb\\Shared\\ScrumEstimationWeb.Shared.csproj"
             }
           }
         }

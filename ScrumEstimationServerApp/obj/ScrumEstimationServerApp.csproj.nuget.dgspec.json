@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationServerApp\\ScrumEstimationServerApp.csproj": {}
+    "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationServerApp\\ScrumEstimationServerApp.csproj": {}
   },
   "projects": {
-    "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationServerApp\\ScrumEstimationServerApp.csproj": {
+    "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationServerApp\\ScrumEstimationServerApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationServerApp\\ScrumEstimationServerApp.csproj",
+        "projectUniqueName": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationServerApp\\ScrumEstimationServerApp.csproj",
         "projectName": "ScrumEstimationServerApp",
-        "projectPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationServerApp\\ScrumEstimationServerApp.csproj",
+        "projectPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationServerApp\\ScrumEstimationServerApp.csproj",
         "packagesPath": "C:\\Users\\BichVuThi\\.nuget\\packages\\",
-        "outputPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationServerApp\\obj\\",
+        "outputPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationServerApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\BichVuThi\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -56,6 +56,10 @@
               "target": "Package",
               "version": "[6.0.0, )"
             },
+            "Microsoft.Extensions.Caching.Memory": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
             "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",
               "version": "[6.0.0, )"
@@ -63,6 +67,10 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.1, )"
+            },
+            "Quartz.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[3.4.0, )"
             }
           },
           "imports": [
@@ -83,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

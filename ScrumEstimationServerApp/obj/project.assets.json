@@ -312,7 +312,7 @@
           "lib/netstandard2.0/Microsoft.Extensions.Caching.Abstractions.dll": {}
         }
       },
-      "Microsoft.Extensions.Caching.Memory/6.0.0": {
+      "Microsoft.Extensions.Caching.Memory/6.0.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Caching.Abstractions": "6.0.0",
@@ -375,6 +375,33 @@
         },
         "runtime": {
           "lib/net6.0/Microsoft.Extensions.Features.dll": {}
+        }
+      },
+      "Microsoft.Extensions.FileProviders.Abstractions/2.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "2.1.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Hosting.Abstractions/2.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "2.1.1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.1.1",
+          "Microsoft.Extensions.FileProviders.Abstractions": "2.1.1",
+          "Microsoft.Extensions.Logging.Abstractions": "2.1.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Hosting.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Hosting.Abstractions.dll": {}
         }
       },
       "Microsoft.Extensions.Logging/6.0.0": {
@@ -571,6 +598,48 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "Quartz/3.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "2.1.1",
+          "System.Configuration.ConfigurationManager": "4.7.0",
+          "System.Diagnostics.DiagnosticSource": "4.7.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Quartz.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Quartz.dll": {}
+        }
+      },
+      "Quartz.Extensions.DependencyInjection/3.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "2.1.1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.1.1",
+          "Microsoft.Extensions.Options": "2.1.1",
+          "Quartz": "3.4.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Quartz.Extensions.DependencyInjection.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Quartz.Extensions.DependencyInjection.dll": {}
+        }
+      },
+      "Quartz.Extensions.Hosting/3.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Hosting.Abstractions": "2.1.1",
+          "Quartz.Extensions.DependencyInjection": "3.4.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Quartz.Extensions.Hosting.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Quartz.Extensions.Hosting.dll": {}
+        }
+      },
       "System.Collections.Immutable/6.0.0": {
         "type": "package",
         "dependencies": {
@@ -593,7 +662,7 @@
           "System.Security.Permissions": "4.7.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "ref/netstandard2.0/System.Configuration.ConfigurationManager.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll": {}
@@ -699,7 +768,7 @@
           "System.Security.Principal.Windows": "4.7.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "ref/netstandard2.0/System.Security.AccessControl.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Security.AccessControl.dll": {}
@@ -748,7 +817,7 @@
           "System.Windows.Extensions": "4.7.0"
         },
         "compile": {
-          "ref/netcoreapp3.0/_._": {}
+          "ref/netcoreapp3.0/System.Security.Permissions.dll": {}
         },
         "runtime": {
           "lib/netcoreapp3.0/System.Security.Permissions.dll": {}
@@ -757,7 +826,7 @@
       "System.Security.Principal.Windows/4.7.0": {
         "type": "package",
         "compile": {
-          "ref/netcoreapp3.0/_._": {}
+          "ref/netcoreapp3.0/System.Security.Principal.Windows.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Security.Principal.Windows.dll": {}
@@ -809,7 +878,7 @@
           "System.Drawing.Common": "4.7.0"
         },
         "compile": {
-          "ref/netcoreapp3.0/_._": {}
+          "ref/netcoreapp3.0/System.Windows.Extensions.dll": {}
         },
         "runtime": {
           "lib/netcoreapp3.0/System.Windows.Extensions.dll": {}
@@ -1320,10 +1389,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Extensions.Caching.Memory/6.0.0": {
-      "sha512": "Ve3BlCzhAlVp5IgO3+8dacAhZk1A0GlIlFNkAcfR2TfAibLKWIt5DhVJZfu4YtW+XZ89OjYf/agMcgjDtPxdGA==",
+    "Microsoft.Extensions.Caching.Memory/6.0.1": {
+      "sha512": "B4y+Cev05eMcjf1na0v9gza6GUtahXbtY1JCypIgx3B4Ea/KAgsWyXEmW4q6zMbmTMtKzmPVk09rvFJirvMwTg==",
       "type": "package",
-      "path": "microsoft.extensions.caching.memory/6.0.0",
+      "path": "microsoft.extensions.caching.memory/6.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1334,7 +1403,7 @@
         "lib/net461/Microsoft.Extensions.Caching.Memory.xml",
         "lib/netstandard2.0/Microsoft.Extensions.Caching.Memory.dll",
         "lib/netstandard2.0/Microsoft.Extensions.Caching.Memory.xml",
-        "microsoft.extensions.caching.memory.6.0.0.nupkg.sha512",
+        "microsoft.extensions.caching.memory.6.0.1.nupkg.sha512",
         "microsoft.extensions.caching.memory.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -1425,6 +1494,32 @@
         "lib/netstandard2.0/Microsoft.Extensions.Features.xml",
         "microsoft.extensions.features.6.0.0.nupkg.sha512",
         "microsoft.extensions.features.nuspec"
+      ]
+    },
+    "Microsoft.Extensions.FileProviders.Abstractions/2.1.1": {
+      "sha512": "UEQB5/QPuLYaCvScZQ9llhcks5xyEUKh41D615FoehRAF9UgGVmXHcCSOH8idHHLRoKm+OJJjEy1oywvuaL33w==",
+      "type": "package",
+      "path": "microsoft.extensions.fileproviders.abstractions/2.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Abstractions.xml",
+        "microsoft.extensions.fileproviders.abstractions.2.1.1.nupkg.sha512",
+        "microsoft.extensions.fileproviders.abstractions.nuspec"
+      ]
+    },
+    "Microsoft.Extensions.Hosting.Abstractions/2.1.1": {
+      "sha512": "kVVdHnOFJbcXxgZzrT6nwkrWZTHL+47LT59S9J2Jp0BNO3EQWNEZHUUZMb/kKFV7LtW+bp+EuAOPNUqEcqI++Q==",
+      "type": "package",
+      "path": "microsoft.extensions.hosting.abstractions/2.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.Extensions.Hosting.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Hosting.Abstractions.xml",
+        "microsoft.extensions.hosting.abstractions.2.1.1.nupkg.sha512",
+        "microsoft.extensions.hosting.abstractions.nuspec"
       ]
     },
     "Microsoft.Extensions.Logging/6.0.0": {
@@ -1812,6 +1907,52 @@
         "newtonsoft.json.13.0.1.nupkg.sha512",
         "newtonsoft.json.nuspec",
         "packageIcon.png"
+      ]
+    },
+    "Quartz/3.4.0": {
+      "sha512": "N8350OAlQhd8zKg0ARFikGjh3bfAW/CF/KVxu2fTIlAALB/oC1eg54n/QAPYR5ryHuYyDr5G8/Qa4k+D/7OFRQ==",
+      "type": "package",
+      "path": "quartz/3.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net462/Quartz.dll",
+        "lib/net462/Quartz.xml",
+        "lib/net472/Quartz.dll",
+        "lib/net472/Quartz.xml",
+        "lib/netstandard2.0/Quartz.dll",
+        "lib/netstandard2.0/Quartz.xml",
+        "quartz-logo-small.png",
+        "quartz.3.4.0.nupkg.sha512",
+        "quartz.nuspec"
+      ]
+    },
+    "Quartz.Extensions.DependencyInjection/3.4.0": {
+      "sha512": "fYIHYFwVnzcwmkvE/cjx/YGmU+rZ5OkjuHmdNJz49gxA/dFnm8foSFxCmzYqyjLpHqQAbteOf1+43cROSvvmFw==",
+      "type": "package",
+      "path": "quartz.extensions.dependencyinjection/3.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Quartz.Extensions.DependencyInjection.dll",
+        "lib/netstandard2.0/Quartz.Extensions.DependencyInjection.xml",
+        "quartz-logo-small.png",
+        "quartz.extensions.dependencyinjection.3.4.0.nupkg.sha512",
+        "quartz.extensions.dependencyinjection.nuspec"
+      ]
+    },
+    "Quartz.Extensions.Hosting/3.4.0": {
+      "sha512": "hdecxRzfafiHd33bAAV0dc7B2cmwJKchA0q3mNPnzye2zvc8h5w7wSP4WSUydfwht3DAAvoE8hg+iYH6SzFCbA==",
+      "type": "package",
+      "path": "quartz.extensions.hosting/3.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Quartz.Extensions.Hosting.dll",
+        "lib/netstandard2.0/Quartz.Extensions.Hosting.xml",
+        "quartz-logo-small.png",
+        "quartz.extensions.hosting.3.4.0.nupkg.sha512",
+        "quartz.extensions.hosting.nuspec"
       ]
     },
     "System.Collections.Immutable/6.0.0": {
@@ -2357,8 +2498,10 @@
       "Microsoft.AspNetCore.SignalR.Client >= 6.0.0",
       "Microsoft.EntityFrameworkCore >= 6.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.0",
+      "Microsoft.Extensions.Caching.Memory >= 6.0.1",
       "Microsoft.Extensions.DependencyInjection >= 6.0.0",
-      "Newtonsoft.Json >= 13.0.1"
+      "Newtonsoft.Json >= 13.0.1",
+      "Quartz.Extensions.Hosting >= 3.4.0"
     ]
   },
   "packageFolders": {
@@ -2367,11 +2510,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationServerApp\\ScrumEstimationServerApp.csproj",
+      "projectUniqueName": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationServerApp\\ScrumEstimationServerApp.csproj",
       "projectName": "ScrumEstimationServerApp",
-      "projectPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationServerApp\\ScrumEstimationServerApp.csproj",
+      "projectPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationServerApp\\ScrumEstimationServerApp.csproj",
       "packagesPath": "C:\\Users\\BichVuThi\\.nuget\\packages\\",
-      "outputPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimationServerApp\\obj\\",
+      "outputPath": "D:\\Working\\Tool\\ScrumEstimation\\ScrumEstimation\\ScrumEstimationServerApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\BichVuThi\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2416,6 +2559,10 @@
             "target": "Package",
             "version": "[6.0.0, )"
           },
+          "Microsoft.Extensions.Caching.Memory": {
+            "target": "Package",
+            "version": "[6.0.1, )"
+          },
           "Microsoft.Extensions.DependencyInjection": {
             "target": "Package",
             "version": "[6.0.0, )"
@@ -2423,6 +2570,10 @@
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[13.0.1, )"
+          },
+          "Quartz.Extensions.Hosting": {
+            "target": "Package",
+            "version": "[3.4.0, )"
           }
         },
         "imports": [
@@ -2443,7 +2594,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

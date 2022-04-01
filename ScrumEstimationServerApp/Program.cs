@@ -7,14 +7,16 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore.SqlServer;
 using ScrumEstimationServerApp.Entity;
 using ScrumEstimationServerApp;
+using Quartz;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddMemoryCache();
 builder.Services.AddServerSideBlazor();
 
-builder.Services.AddSingleton<WeatherForecastService>();
+//builder.Services.AddSingleton<WeatherForecastService>();
 
 builder.Services.AddScoped<ScrumService>();
 
@@ -42,13 +44,20 @@ app.Run();
 
 void ConfigureService()
 {
-    var connectionString = builder.Configuration["ConnectionStrings:DefaultConnection"];
-    builder.Services.AddDbContext<DbEntity>(options => options.UseSqlServer(connectionString, opt => opt.CommandTimeout(180)));
+    //var connectionString = builder.Configuration["ConnectionStrings:DefaultConnection"];
+    //builder.Services.AddDbContext<DbEntity>(options => options.UseSqlServer(connectionString, opt => opt.CommandTimeout(180)));
     builder.Services.AddSignalR(hubOptions =>
     {
         hubOptions.EnableDetailedErrors = true;
         hubOptions.KeepAliveInterval = TimeSpan.FromMinutes(1);
     });
+
+    builder.Services.AddQuartz(q =>
+    {
+        q.UseMicrosoftDependencyInjectionScopedJobFactory();
+    });
+
+    builder.Services.AddQuartzHostedService(q => q.AwaitApplicationStarted = true);
 
     builder.Services.AddResponseCompression(opts =>
     {

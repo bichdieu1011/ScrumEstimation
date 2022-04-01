@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ScrumEstimationServerApp.Data
+﻿namespace ScrumEstimationServerApp.Data
 {
     public class ScrumCard
     {
@@ -32,9 +26,7 @@ namespace ScrumEstimationServerApp.Data
         public string UserName { get; set; }
         public bool IsEstimate { get; set; }
         public decimal? Point { get; set; }
-
     }
-
 
     public class EstimatedInfo
     {
